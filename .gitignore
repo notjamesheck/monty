@@ -1,0 +1,8 @@
+#personal git stuff
+*.git
+
+#Byte codes
+*.m
+
+#Test programs
+*.out
