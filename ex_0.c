@@ -6,7 +6,7 @@
 * @n: value for new head node
 * Return: 0
 */
-void pushFunc(stack_t **head, unsigned int n)
+void pushFunc(stack_t **head, int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
@@ -24,10 +24,13 @@ void pushFunc(stack_t **head, unsigned int n)
 		(*head) = new;
 		printf("made head with val %d\n", (*head)->n);/**/
 	}
-	new->prev = NULL;
-	new->next = (*head);
-	(*head)->prev = new;
-	(*head) = new;
+	else
+	{
+		new->prev = NULL;
+		new->next = (*head);
+		(*head)->prev = new;
+		(*head) = new;
+	}
 	printf("made head with val %d\n", (*head)->n);/**/
 }
 
@@ -43,7 +46,7 @@ void pallFunc(stack_t **head, unsigned int n)
 
 	n = n;
 	printf("in pallFunc\n");/**/
-	while ((*temp))
+	while (*temp)
 	{
 		printf("%d\n", (*temp)->n);
 		*temp = (*temp)->next;

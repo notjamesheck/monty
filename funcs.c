@@ -7,7 +7,7 @@
 * @line_num: line number from file, for errors
 * Return: 0
 */
-int funcs(char *str, stack_t **head, unsigned int line_number)
+void funcs(char *str, stack_t **head, unsigned int line_number)
 {
 	unsigned int i;
 	int comp;
@@ -31,7 +31,7 @@ int funcs(char *str, stack_t **head, unsigned int line_number)
 		{
 			printf("found a match, executing\n");
 			(c[i].f)(head, line_number);
-			return (0);
+			return;
 		}
 		i++;
 	}

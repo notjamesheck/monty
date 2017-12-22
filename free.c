@@ -9,16 +9,17 @@ void free_stack(stack_t **head)
 	stack_t *temp;
 	
 	printf("freeing something\n");
-	temp = *head;
+	temp = (*head);
 	while (temp)
 	{
-		printf("freeing something\n");
+		printf("freeing\n");
 		temp = (*head)->next;
+		temp->prev = NULL;
 		free(*head);
-		*head = temp;
+		(*head) = temp;
 	}
 	if (*head == NULL)
-		printf("the stack is empty\n");
+		printf("freed something\n");
 } 
 /**
 * exit_stak - exit the program

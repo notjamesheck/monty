@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	ssize_t nread;
 	char *toke1, *toke2, *delims = "\n\t\r ";
 	unsigned int line_number = 1, test = 1;
+	int a = 0;
 	stack_t *head = NULL;
 
 	if (argc != 2) /* check if correct number of args */
@@ -39,7 +40,8 @@ int main(int argc, char *argv[])
 			{
 				printf("going into push\n");
 				test = 1;
-				pushFunc(&head, line_number);
+				a = atoi(toke2);
+				pushFunc(&head, a);
 			}
 			else
 			{
