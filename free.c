@@ -9,12 +9,10 @@ void free_stack(stack_t **head)
 	stack_t *temp;
 
 	printf("freeing something\n");
-	temp = (*head);
-	while (temp)
+	while (*head)
 	{
 		printf("freeing\n");
 		temp = (*head)->next;
-		temp->prev = NULL;
 		free(*head);
 		(*head) = temp;
 	}

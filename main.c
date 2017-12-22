@@ -49,10 +49,10 @@ int main(int argc, char *argv[])
 				funcs(toke1, &head, line_number);
 			}
 		}
+		free_stack(&head);
 		line_number++;
 	}
 	free(line);
 	fclose(file);
-	free_stack(&head);
 	return (0);
 }
