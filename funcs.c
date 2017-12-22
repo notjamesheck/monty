@@ -15,10 +15,10 @@ int funcs(char *str, stack_t **head, int line_num)
 	instruction_t c[] = {
 		{"pall", pallFunc},
 		{"pint", pintFunc},
-	/*	{"pop", popFunc},*/
-	/*	{"swap", swapFunc},*/
-	/*	{"add", addFunc},*/
-	/*	{"nop", nopFunc},*/
+		{"pop", popFunc},
+		{"swap", swapFunc},
+		{"add", addFunc},
+		{"nop", nopFunc},
 		{NULL, NULL}
 	};
 	i = 0;

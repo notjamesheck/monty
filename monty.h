@@ -43,9 +43,9 @@ void pallFunc(stack_t **stack, unsigned int line_number);
 stack_t *pushFunc(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *head);
 void pintFunc(stack_t **stack, unsigned int line_number);
-/* void popFunc(stack_t **stack, unsigned int line_number); */
-/* void swapFunc(stack_t **stack, unsigned int line_number); */
-/* void addFunc(stack_t **stack, unsigned int line_number); */
-/* void nopFunc(stack_t **stack, unsigned int line_number); */
+void popFunc(stack_t **stack, unsigned int line_number);
+void swapFunc(stack_t **stack, unsigned int line_number);
+void addFunc(stack_t **stack, unsigned int line_number);
+void nopFunc(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
