@@ -40,7 +40,7 @@ int funcs(char *str, stack_t **head, unsigned int line_number);
 int _isdigit(char *m);
 int isPush(char *toke1, char *toke2);
 void pallFunc(stack_t **stack, unsigned int line_number);
-stack_t *pushFunc(stack_t **stack, unsigned int line_number);
+void pushFunc(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **head);
 void pintFunc(stack_t **stack, unsigned int line_number);
 void popFunc(stack_t **stack, unsigned int line_number);

@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			{
 				printf("going into push\n");
 				test = 1;
-				pushFunc(&head, line_number); 
+				pushFunc(&head, line_number);
 			}
 			else
 			{
@@ -52,6 +52,5 @@ int main(int argc, char *argv[])
 	free(line);
 	fclose(file);
 	free_stack(&head);
-
 	return (0);
 }
