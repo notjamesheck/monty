@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	size_t len;
 	char *line = NULL;
 	ssize_t nread;
-	char *toke1, *toke2, *delims = "\n\t ";
+	char *toke1, *toke2, *delims = "\n\t\r ";
 	int line_num = 1;
 	stack_t *head = NULL;
 
