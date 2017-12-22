@@ -12,37 +12,46 @@ int main(int argc, char *argv[])
 	char *line = NULL;
 	ssize_t nread;
 	char *toke1, *toke2, *delims = "\n\t\r ";
-	int line_num = 1;
+	unsigned int line_number = 1, test = 1;
 	stack_t *head = NULL;
 
-	if (argc != 2)
+	if (argc != 2) /* check if correct number of args */
 	{
 		printf("USAGE: monty file\n");
-		exit(EXIT_FAILURE); }
+		exit(EXIT_FAILURE);
+	}
 	file = fopen(argv[1], "r");
-	if (file == NULL)
+	if (file == NULL) /* check if fopen is successful */
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE); }
-	while ((nread = getline(&line, &len, file)) != -1)
+		exit(EXIT_FAILURE); 
+	}
+	while ((nread = getline(&line, &len, file)) != -1) /* get each line of file */
 	{
 		toke1 = strtok(line, delims);
+		printf("made token1 %s\n", toke1);
 		if (toke1)
 		{
 			toke2 = strtok(NULL, delims);
-			if (toke2 != NULL)
+			printf("made token2 %s\n", toke2);
+			test = isPush(toke1, toke2);
+			if (test == 0)
 			{
-				eval(&head, toke1, toke2, line_num); }
+				printf("going into push\n");
+				test = 1;
+				pushFunc(&head, line_number); 
+			}
 			else
 			{
-				funcs(toke1, &head, line_num); }
+				printf("going into funcs\n");
+				funcs(toke1, &head, line_number);
+			}
 		}
-		line_num++; }
-
+		line_number++;
+	}
 	free(line);
 	fclose(file);
-	if (head != NULL)
-		free_stack(head);
+	free_stack(&head);
 
 	return (0);
 }

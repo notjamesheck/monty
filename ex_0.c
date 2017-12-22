@@ -10,26 +10,26 @@ stack_t *pushFunc(stack_t **head, unsigned int n)
 {
 	stack_t *new = (stack_t *) malloc(sizeof(stack_t));
 
-	/*printf("in pushFunc now\n");*/
+	printf("in pushFunc now\n");/**/
 	if (new == NULL)
 	{
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = n;
-	if (*head == NULL)
+	if ((*head) == NULL)
 	{
 		new->next = NULL;
 		new->prev = NULL;
-		*head = new;
-		/*printf("made head with val %d\n", (*head)->n);*/
+		(*head) = new;
+		printf("made head with val %d\n", (*head)->n);/**/
 		return (new);
 	}
 	new->prev = NULL;
-	new->next = *head;
+	new->next = (*head);
 	(*head)->prev = new;
-	*head = new;
-	/*printf("made head with val %d\n", (*head)->n);*/
+	(*head) = new;
+	printf("made head with val %d\n", (*head)->n);/**/
 	return (new);
 }
 
@@ -39,11 +39,12 @@ stack_t *pushFunc(stack_t **head, unsigned int n)
 * @n: line number
 * Return: int, print stack to stdout
 */
-void pallFunc(stack_t **head, __attribute__((unused)) unsigned int n)
+void pallFunc(stack_t **head, unsigned int n)
 {
 	stack_t **temp = head;
 
-	/*printf("in pallFunc\n");*/
+	n = n;
+	printf("in pallFunc\n");/**/
 	while ((*temp))
 	{
 		printf("%d\n", (*temp)->n);

@@ -4,20 +4,34 @@
 * @head: pointer to head
 * Return: void
 */
-void free_stack(stack_t *head)
+void free_stack(stack_t **head)
 {
 	stack_t *temp;
-
-	if (head == NULL)
+	
+	printf("freeing memory now\n");
+	if ((*head))
 	{
-		return; }
-	temp = head;
-	while (head->next != NULL)
-	{
-		temp = head;
-		head = head->next;
-		free(temp); }
-	temp = head;
-	free(temp);
-	head = NULL;
-}
+		temp = (*head);
+		while (temp)
+		{
+			temp = (*head)->next;
+			free(*head);
+			(*head) = temp;
+		}
+	}
+} 
+/**
+* exit_stak - exit the program
+* 
+*
+*
+*/
+/*exit_stak()*/
+/*{*/
+/*	close file */
+/*	free buffer*/
+/*	free tokens*/
+/*	free list */
+/*	error message*/
+/*	exit*/
+/*}*/

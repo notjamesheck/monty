@@ -7,7 +7,7 @@
 * @line_num: line number from file, for errors
 * Return: 0
 */
-int funcs(char *str, stack_t **head, int line_num)
+int funcs(char *str, stack_t **head, unsigned int line_number)
 {
 	unsigned int i;
 	int comp;
@@ -22,19 +22,21 @@ int funcs(char *str, stack_t **head, int line_num)
 		{NULL, NULL}
 	};
 	i = 0;
-	/*printf("i'm in funcs\n");*/
+
+	printf("i'm in funcs\n");/**/
 	while (c[i].opcode != NULL)
 	{
 		comp = strcmp(str, c[i].opcode);
 		if (comp == 0)
 		{
-			(c[i].f)(head, line_num);
+			printf("found a match, executing\n");
+			(c[i].f)(head, line_number);
 			return (0);
 		}
 		i++;
 	}
-
-	return (0);
+	printf("L%d: unknown instruction %s\n", line_number, str);
+	exit(EXIT_FAILURE);
 }
 
 /**
@@ -63,41 +65,31 @@ int _isdigit(char *m)
 }
 
 /**
-* eval - evaluate where these values go
-* @head: head node
+* isPush - evaluate if push
 * @toke1: 1st token of line
 * @toke2: 2nd token of line
-* @line_num: line number
 * Return: void
 */
-int eval(stack_t **head, char *toke1, char *toke2, int line_num)
+int isPush(char *toke1, char *toke2)
 {
-	int test1 = strcmp(toke1, "push");
-	int test2 = _isdigit(toke2);
-	int tokeint;
+	int test1 = 0;
+	int test2 = 0;
+	char str[] = "push";
 
-	/*printf("in eval function\n");*/
-	/*printf("test1: %d\n", test1);*/
-	/*printf("test2: %d\n", test2);*/
+	if (toke1)
+		test1 = strcmp(toke1, str);
+
+	if (toke2)
+		test2 = _isdigit(toke2);
+
+
+	printf("in isPush function\n");
+	printf("test1: %d\n", test1);
+	printf("test2: %d\n", test2);
 	if (test1 == 0 && test2 == 0)
 	{
-		tokeint = atoi(toke2);
-		/*printf("tokeint: %d\n", tokeint);*/
-		/*printf("going into pushFunc\n");*/
-		pushFunc(head, tokeint);
-		return (0);
-	}
-	else if (test1 == 0 && test2 != 0)
-	{
-		printf("L%d: usage: push integer\n", line_num);
-		exit(EXIT_FAILURE);
-	}
-	else
-	{
-		/*printf("going into funcs\n"); */
-		funcs(toke1, head, line_num);
 		return (0);
 	}
 
-	return (0);
+	return (1);
 }

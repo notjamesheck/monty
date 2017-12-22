@@ -36,16 +36,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int funcs(char *str, stack_t **head, int line_num);
+int funcs(char *str, stack_t **head, unsigned int line_number);
 int _isdigit(char *m);
-int eval(stack_t **head, char *toke1, char *toke2, int line_num);
+int isPush(char *toke1, char *toke2);
 void pallFunc(stack_t **stack, unsigned int line_number);
 stack_t *pushFunc(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t *head);
+void free_stack(stack_t **head);
 void pintFunc(stack_t **stack, unsigned int line_number);
 void popFunc(stack_t **stack, unsigned int line_number);
 void swapFunc(stack_t **stack, unsigned int line_number);
 void addFunc(stack_t **stack, unsigned int line_number);
 void nopFunc(stack_t **stack, unsigned int line_number);
+/* void exit_stak(stack_t **stack); */
 
 #endif /* MONTY_H */
