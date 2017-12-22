@@ -7,7 +7,7 @@
 void free_stack(stack_t **head)
 {
 	stack_t *temp;
-	
+
 	printf("freeing something\n");
 	temp = (*head);
 	while (temp)
@@ -20,19 +20,4 @@ void free_stack(stack_t **head)
 	}
 	if (*head == NULL)
 		printf("freed something\n");
-} 
-/**
-* exit_stak - exit the program
-* 
-*
-*
-*/
-/*exit_stak()*/
-/*{*/
-/*	close file */
-/*	free buffer*/
-/*	free tokens*/
-/*	free list */
-/*	error message*/
-/*	exit*/
-/*}*/
+}

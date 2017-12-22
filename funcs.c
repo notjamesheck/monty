@@ -4,7 +4,7 @@
 * funcs - function pointers for opcodes
 * @str: string from line of file
 * @head: head node of doubly linked list
-* @line_num: line number from file, for errors
+* @line_number: line number from file, for errors
 * Return: 0
 */
 void funcs(char *str, stack_t **head, unsigned int line_number)

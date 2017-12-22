@@ -6,3 +6,6 @@
 
 #Test programs
 *.out
+
+#Temp Files 
+*.swp

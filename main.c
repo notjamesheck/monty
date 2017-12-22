@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	if (file == NULL) /* check if fopen is successful */
 	{
 		printf("Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE); 
+		exit(EXIT_FAILURE);
 	}
 	while ((nread = getline(&line, &len, file)) != -1) /* get each line of file */
 	{
