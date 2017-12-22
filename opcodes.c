@@ -10,7 +10,7 @@ void pintFunc(stack_t **head, unsigned int line_number)
 {
 	if ((*head) == NULL)
 	{
-		printf("L %d: can't pint, stack empty", line_number);
+		printf("L %d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*head)->n);
@@ -81,7 +81,7 @@ void popFunc(stack_t **head, unsigned int line_number)
 	temp = (*head);
 	if (temp == NULL)
 	{
-		printf("L%d: can't pop an empty stack", line_number);
+		printf("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->next == NULL)
