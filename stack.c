@@ -6,13 +6,8 @@
 * @n: value for new head node
 * Return: 0
 */
-int pushFunc(stack_t **head, unsigned int n)
+stack_t *pushFunc(stack_t **head, unsigned int n)
 {
-	/* if head == NULL, make new head */
-	/* else, add node to top */
-	/* error if malloc fails */
-	/* fprintf(stderr, "Error: malloc failed\n"); */
-	/* exit(EXIT_FAILURE); */
 	stack_t *new = (stack_t *) malloc(sizeof(stack_t));
 
 	/*printf("in pushFunc now\n");*/
@@ -28,14 +23,14 @@ int pushFunc(stack_t **head, unsigned int n)
 		new->prev = NULL;
 		*head = new;
 		/*printf("made head with val %d\n", (*head)->n);*/
-		return (0);
+		return (new);
 	}
 	new->prev = NULL;
 	new->next = *head;
 	(*head)->prev = new;
 	*head = new;
 	/*printf("made head with val %d\n", (*head)->n);*/
-	return (0);
+	return (new);
 }
 
 /**
@@ -46,14 +41,12 @@ int pushFunc(stack_t **head, unsigned int n)
 */
 void pallFunc(stack_t **head, __attribute__((unused)) unsigned int n)
 {
+	stack_t **temp = head;
+
 	/*printf("in pallFunc\n");*/
-	if (head == NULL)
+	while ((*temp))
 	{
-		exit(EXIT_FAILURE); }
-	while ((*head)->next != NULL)
-	{
-		printf("%d\n", (*head)->n);
-		*head = (*head)->next;
+		printf("%d\n", (*temp)->n);
+		*temp = (*temp)->next;
 	}
-	printf("%d\n", (*head)->n);
 }

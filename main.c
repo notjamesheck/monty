@@ -38,10 +38,11 @@ int main(int argc, char *argv[])
 				funcs(toke1, &head, line_num); }
 		}
 		line_num++; }
-	if (head != NULL)
-		free_stack(head);
 
 	free(line);
 	fclose(file);
+	if (head != NULL)
+		free_stack(head);
+
 	return (0);
 }
