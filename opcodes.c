@@ -52,7 +52,7 @@ void swapFunc(stack_t **head, unsigned int line_number)
 		printf("L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE); }
 	temp = (*head)->n;
-	head->n = (*head)->next->n;
+	(*head)->n = (*head)->next->n;
 	(*head)->next->n = temp;
 }
 
@@ -64,9 +64,8 @@ void swapFunc(stack_t **head, unsigned int line_number)
 */
 void nopFunc(stack_t **head, unsigned int line_number)
 {
-	void(*head);
-
-	void(n);
+	head = head;
+	line_number = line_number;
 }
 
 /**
@@ -82,7 +81,7 @@ void popFunc(stack_t **head, unsigned int line_number)
 	temp = (*head);
 	if (temp == NULL)
 	{
-		printf("L%d: can't pop an empty stack", n);
+		printf("L%d: can't pop an empty stack", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->next == NULL)
