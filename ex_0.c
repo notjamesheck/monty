@@ -10,7 +10,7 @@ void pushFunc(stack_t **head, int n)
 {
 	stack_t *new = malloc(sizeof(stack_t));
 
-	printf("in pushFunc now\n");/**/
+	/*printf("in pushFunc now\n");*/
 	if (new == NULL)
 	{
 		printf("Error: malloc failed\n");
@@ -22,7 +22,7 @@ void pushFunc(stack_t **head, int n)
 		new->next = NULL;
 		new->prev = NULL;
 		(*head) = new;
-		printf("made head with val %d\n", (*head)->n);/**/
+		/*printf("made head with val %d\n", (*head)->n);*/
 	}
 	else
 	{
@@ -31,7 +31,7 @@ void pushFunc(stack_t **head, int n)
 		(*head)->prev = new;
 		(*head) = new;
 	}
-	printf("made head with val %d\n", (*head)->n);/**/
+	/*printf("made head with val %d\n", (*head)->n);*/
 }
 
 /**
