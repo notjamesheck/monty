@@ -42,13 +42,13 @@ void pushFunc(stack_t **head, int n)
 */
 void pallFunc(stack_t **head, unsigned int n)
 {
-	stack_t **temp = head;
+	stack_t *temp = *head;
 
 	n = n;
-	printf("in pallFunc\n");/**/
-	while (*temp)
+	/*printf("in pallFunc\n");*/
+	while (temp)
 	{
-		printf("%d\n", (*temp)->n);
-		*temp = (*temp)->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }

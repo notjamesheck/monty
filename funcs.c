@@ -23,13 +23,13 @@ void funcs(char *str, stack_t **head, unsigned int line_number)
 	};
 	i = 0;
 
-	printf("i'm in funcs\n");/**/
+	/*printf("i'm in funcs\n");*/
 	while (c[i].opcode != NULL)
 	{
 		comp = strcmp(str, c[i].opcode);
 		if (comp == 0)
 		{
-			printf("found a match, executing\n");
+			/*printf("found a match, executing\n");*/
 			(c[i].f)(head, line_number);
 			return;
 		}
@@ -83,9 +83,7 @@ int isPush(char *toke1, char *toke2)
 		test2 = _isdigit(toke2);
 
 
-	printf("in isPush function\n");
-	printf("test1: %d\n", test1);
-	printf("test2: %d\n", test2);
+	/*printf("in isPush function\n");*/
 	if (test1 == 0 && test2 == 0)
 	{
 		return (0);
