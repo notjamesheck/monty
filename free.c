@@ -21,7 +21,7 @@ void free_stack(stack_t **head)
 }
 
 /**
-* _exit - free and exit failure
+* emer_exit - free and exit failure
 * @line: from getline
 * @file: from fopen
 * @head: stack
