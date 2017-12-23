@@ -19,3 +19,18 @@ void free_stack(stack_t **head)
 	/*if (*head == NULL)*/
 		/*printf("freed something\n");*/
 }
+
+/**
+* _exit - free and exit failure
+* @line: from getline
+* @file: from fopen
+* @head: stack
+* Return: void
+*/
+void emer_exit(char *line, FILE *file, stack_t **head)
+{
+	free(line);
+	fclose(file);
+	free_stack(head);
+	exit(EXIT_FAILURE);
+}

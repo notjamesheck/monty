@@ -72,8 +72,8 @@ int _isdigit(char *m)
 */
 int isPush(char *toke1, char *toke2)
 {
-	int test1 = 0;
-	int test2 = 0;
+	int test1 = 1;
+	int test2 = 1;
 	char str[] = "push";
 
 	if (toke1)
@@ -88,6 +88,9 @@ int isPush(char *toke1, char *toke2)
 	{
 		return (0);
 	}
-
+	else if (test1 == 0 && test2 != 0)
+	{
+		return (2);
+	}
 	return (1);
 }

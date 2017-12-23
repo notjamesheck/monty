@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			else if (test == 2)
 			{
 				printf("L%d: usage: push integer\n", line_number);
-				emer_exit(line, file, &head); }
+				_exit(line, file, &head); }
 			else
 			{
 				funcs(toke1, &head, line_number); } }

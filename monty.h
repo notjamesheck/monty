@@ -47,6 +47,5 @@ void popFunc(stack_t **stack, unsigned int line_number);
 void swapFunc(stack_t **stack, unsigned int line_number);
 void addFunc(stack_t **stack, unsigned int line_number);
 void nopFunc(stack_t **stack, unsigned int line_number);
-/* void exit_stak(stack_t **stack); */
-
+void emer_exit(char *line, FILE *file, stack_t **head);
 #endif /* MONTY_H */
